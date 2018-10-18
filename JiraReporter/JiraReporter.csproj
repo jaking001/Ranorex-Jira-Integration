@@ -7,7 +7,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>JiraReporter</RootNamespace>
     <AssemblyName>Ranorex_JiraIntegration</AssemblyName>
-    <RanorexVersion>7.1</RanorexVersion>
+    <RanorexVersion>8.3</RanorexVersion>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <projectdefaultrepository>6DAA0E69-EBD0-40DF-B6D1-8546891CC1DE</projectdefaultrepository>
     <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
@@ -15,7 +15,7 @@
     <WarningLevel>4</WarningLevel>
     <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
     <TargetFrameworkProfile />
-    <RanorexTargetsPath>$(MSBuildExtensionsPath)\Ranorex$(RanorexVersion)\Ranorex.MSBuild.Targets</RanorexTargetsPath>
+    <RanorexTargetsPath>$(MSBuildProgramFiles32)\MSBuild\Ranorex$(RanorexVersion)\Ranorex.MSBuild.Targets</RanorexTargetsPath>
     <NoWin32Manifest>False</NoWin32Manifest>
     <SignAssembly>False</SignAssembly>
     <DelaySign>False</DelaySign>
@@ -53,37 +53,83 @@
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
   <ItemGroup>
-    <Reference Include="Atlassian.Jira, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\Ranorex\RanorexStudio Projects\JiraIntegration_7.1.0.1_GIT\packages\Atlassian.SDK.9.3.1\lib\Atlassian.Jira.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Atlassian.Jira">
+      <HintPath>packages\Atlassian.SDK.9.3.1\lib\net452\Atlassian.Jira.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
-      <HintPath>..\..\Ranorex\RanorexStudio Projects\JiraIntegration_7.1.0.1_GIT\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Ranorex.Bootstrapper">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ranorex.Core">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ranorex.Core.Resolver">
       <Private>True</Private>
     </Reference>
-    <Reference Include="Ranorex.Core" />
-    <Reference Include="Ranorex.Plugin.Cef" />
-    <Reference Include="Ranorex.Plugin.ChromeWeb" />
-    <Reference Include="Ranorex.Plugin.Flex" />
-    <Reference Include="Ranorex.Plugin.Java" />
-    <Reference Include="Ranorex.Plugin.Mobile" />
-    <Reference Include="Ranorex.Plugin.MozillaWeb" />
-    <Reference Include="Ranorex.Plugin.Msaa" />
-    <Reference Include="Ranorex.Plugin.Office" />
-    <Reference Include="Ranorex.Plugin.Qt" />
-    <Reference Include="Ranorex.Plugin.RawText" />
-    <Reference Include="Ranorex.Plugin.Sap" />
-    <Reference Include="Ranorex.Plugin.Uia" />
-    <Reference Include="Ranorex.Plugin.Web" />
-    <Reference Include="Ranorex.Plugin.WebDriver" />
-    <Reference Include="Ranorex.Plugin.Win32" />
-    <Reference Include="Ranorex.Plugin.WinForms" />
-    <Reference Include="Ranorex.Plugin.Wpf" />
-    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\Ranorex\RanorexStudio Projects\JiraIntegration_7.1.0.1_GIT\packages\RestSharp.105.2.3\lib\net452\RestSharp.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Ranorex.Plugin.Cef">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.ChromeWeb">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.Delphi">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.FirefoxWeb">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.Flex">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.Java">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.Mobile">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.Msaa">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.Office">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.Qt">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.RawText">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.Sap">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.Test">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.Uia">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.Web">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.WebDriver">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.Win32">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.WinForms">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.Wpf">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RestSharp, Version=106.5.4.0, Culture=neutral, PublicKeyToken=598062e77f915f75">
+      <HintPath>packages\RestSharp.106.5.4\lib\net452\RestSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
@@ -139,7 +185,7 @@
       <id>eed2ee5d-2ad8-4bbc-91f0-03c3e225641d</id>
     </None>
     <None Include="packages.config">
-      <id>3f70ae2d-1ac8-4ab2-8196-b1f0d995cc4c</id>
+      <id>9bd45567-d212-42b0-ab44-d6d326191a18</id>
     </None>
     <None Include="RanorexJiraCli.exe">
       <id>3469f02b-a87c-46c7-9290-f3f98bfdb956</id>
